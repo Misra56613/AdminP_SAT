@@ -6,12 +6,15 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { LoginGuardGuard } from '../services/service.index';
+
 
 const pagesRoutes: Routes = [
 
     {
         path: '', // Si es vacío redirecciona a : 'PagesComponent' // data: { titulo: 'Progress' } Para la data que quiera en mis paginas
         component: PagesComponent,
+        canActivate: [LoginGuardGuard],  // Implemento mi LoginGuard
         children:  [
            {path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },  // Rutas hijas
            {path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' }},

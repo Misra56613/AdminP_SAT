@@ -10,13 +10,13 @@ export class Graficas1Component implements OnInit {
 
   graficos: any = {
     grafico1: {
-      labels: ['Con Frijoles', 'Con Natilla', 'Con tocino'],
-      data:  [24, 30, 46],
+      labels: ['NO', 'SI'],
+      data:  [24, 30],
       type: 'doughnut',
-      leyenda: 'EL usuario es ilocalizable'
+      leyenda: '¿EL usuario es ilocalizable?'
     },
     grafico2: {
-      labels: ['Hombres', 'Mujeres', ' '],
+      labels: ['Hombres', 'Mujeres'],
       data:  [4500, 6000],
       type: 'doughnut',
       leyenda: 'Entrevistados'
@@ -25,13 +25,13 @@ export class Graficas1Component implements OnInit {
       labels: ['Si', 'No'],
       data:  [95, 5],
       type: 'doughnut',
-      leyenda: '¿Encontro lo que buscaba?'
+      leyenda: '¿EL área fue la correcta?'
     },
     grafico4: {
-      labels: ['No', 'Si', 'come kk'],
-      data:  [85, 15, 4500],
+      labels: ['No', 'Si', ],
+      data:  [85, 15],
       type: 'doughnut',
-      leyenda: '¿Le gusta por el chiquistrikis?'
+      leyenda: '¿El sistema funciona correctamente?'
     },
   };
 
