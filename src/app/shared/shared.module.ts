@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
+// Pipes Modulo
+import { PipesModule } from '../pipes/pipes.module';
+
 
 
 // Paginas  compartidas a lo largo de la APP
@@ -14,7 +17,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 @NgModule({
    imports: [
      RouterModule,
-     CommonModule
+     CommonModule,
+     PipesModule
    ],
   declarations: [
     NopaguefoundComponent,
