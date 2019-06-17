@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SidebarService {
 
   menu: any = [
@@ -11,14 +9,23 @@ export class SidebarService {
       icono: 'mdi mdi-gauge',
       submenu: [
         { titulo: 'Dashboard', url: '/dashboard' },
-        { titulo: 'ProgressBar', url: '/progress' },
+        { titulo : 'ProgressBar', url: '/progress' },
         { titulo: 'Gráficas', url: '/graficas1' },
         { titulo: 'Promesas', url: '/promesas' },
-        { titulo: 'Rxjs', url: '/rxjs' }
+        { titulo: 'RxJs', url: '/rxjs' }
+      ]
+    },
+    {
+      titulo: 'Mantenimientos',
+      icono: 'mdi mdi-folder-lock-open',
+      submenu: [
+        { titulo: 'Usuarios', url: '/usuarios' },
+        { titulo: 'Áreas', url: '/areas' },
+        { titulo: 'Empleados', url: '/empleados' }
       ]
     }
   ];
 
-
   constructor() { }
+
 }
