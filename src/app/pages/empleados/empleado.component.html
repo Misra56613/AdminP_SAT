@@ -1,0 +1,42 @@
+<div class="row animated fadeIn">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Empleado: {{empleado.nombre}}</h3>
+            <p class="text-muted m-b-30 font-13"> Agrega a el empleado </p>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarEmpleado(f)">
+                        <div class="form-group">
+                            <label>Nombre del empleado</label>
+                            <input [(ngModel)]="empleado.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del empleado" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Área</label>
+                            <select (change)="cambioArea( $event.target.value )" (changue)="cambioArea($event)" [(ngModel)]="empleado.area" name="area" class="form-control" required>
+                              <option value="">Seleccione Área</option>
+                              <option *ngFor="let area of areas" [value]="area._id">
+                                {{ area.nombre }}
+                              </option>
+                            </select>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Guardar
+                          <i class="fa fa-save"></i>
+                        </button>
+                        <a routerLink="/empleados" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-body">
+            <h4 class="box-title m-b-0">Fotografía</h4>
+            <img (click)="cambiarFoto()" [src]="empleado.img | imagen: 'empleado'" class="img-circle img-fluid pointer">
+        </div>
+    </div>
+
+</div>

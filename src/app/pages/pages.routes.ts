@@ -13,7 +13,9 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { LoginGuardGuard } from '../services/service.index';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-
+import {AreasComponent} from './areas/areas.component';
+import { EmpleadosComponent } from './empleados/empleados.component';
+import { EmpleadoComponent } from './empleados/empleado.component';
 
 const pagesRoutes: Routes = [
     {
@@ -32,6 +34,9 @@ const pagesRoutes: Routes = [
 
 // Mantenimientos
             { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimientos de usuarios' } },
+            { path: 'areas', component: AreasComponent, data: { titulo: 'Mantenimientos de Áreas' } },
+            { path: 'empleados', component: EmpleadosComponent , data: { titulo: 'Mantenimientos de Empleados' } },
+            { path: 'empleado/:id', component: EmpleadoComponent , data: { titulo: 'Actualización de Empleados' } },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
     }

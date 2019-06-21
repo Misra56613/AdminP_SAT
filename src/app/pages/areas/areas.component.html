@@ -1,0 +1,55 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarArea(input.value )" type="text" class="form-control" placeholder="Buscar Area...">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button (click)="crearArea()" type="button" class="btn waves-effect waves-light btn-primary">
+                        <i class="fa fa-plus"></i> 
+                        Crear Área
+                    </button>
+
+                </div>
+
+                <h3 class="card-title">Áreas Registradas (<small>{{  _areaService.totalAreas }}</small>)</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+
+                            <th>Áreas</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let area of areas">
+                            <td>
+                                <input [(ngModel)]="area.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del Area">
+                            </td>
+                            <td>
+                                <button (click)="guardarArea( area )" class="btn btn-primary">
+                                  <i class="fa fa-save"></i>
+                                </button>
+
+                                <button (click)="borrarArea( area )" class="btn btn-danger">
+                                  <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarEmpleado(input.value )" type="text" class="form-control" placeholder="Buscar Empleado...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button [routerLink]="['/empleado','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                    <i class="fa fa-plus"></i> 
+                    Crear Empleado
+                  </button>
+                </div>
+
+                <h3 class="card-title">Empleados registrados ( <small> {{ _empleadoService.totalEmpleados }} </small> )</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Empleado</th>
+                            <th>Area</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let empleado of empleados">
+                            <td>
+                                <img [src]="empleado.img | imagen:'empleado'" class="img-50 img-circle">
+                            </td>
+                            <td>
+                                {{ empleado.nombre}}
+                            </td>
+                            <td>
+                                {{ empleado.area.nombre }}
+                            </td>
+                            <td>
+                                <button [routerLink]="['/empleado', empleado._id ]" class="btn btn-primary">
+                                <i class="fa fa-edit"></i>
+                              </button>
+
+                                <button (click)="borrarEmpleado( empleado )" class="btn btn-danger">
+                                <i class="fa fa-trash-o"></i>
+                              </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
